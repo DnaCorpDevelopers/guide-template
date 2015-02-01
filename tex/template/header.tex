@@ -1,0 +1,81 @@
+\documentclass[11pt,a4paper,openright]{book}
+
+\usepackage[scaled]{helvet}
+\renewcommand*\familydefault{\sfdefault}
+
+\usepackage[\DocLanguage]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+
+\usepackage[pdfborder={0 0 0}]{hyperref}
+
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{graphicx}
+
+\usepackage{wallpaper}
+\usepackage{background}
+\usepackage{tikz}
+
+\usepackage{emptypage}
+
+\usepackage{fancyhdr}
+
+\setlength{\parskip}{\baselineskip}
+\setlength\parindent{0pt}
+
+\newlength{\imgWidth}
+\setlength{\imgWidth}{\textwidth}
+
+\addtolength{\evensidemargin}{-70pt-0.4cm}
+\addtolength{\oddsidemargin}{-22pt+3.5cm}
+
+\addtolength{\topmargin}{-20pt-1.3cm}
+\addtolength{\textheight}{+3.5cm}
+\addtolength{\footskip}{+0.9cm}
+
+\usepackage{changepage}
+\strictpagecheck
+
+\usepackage{layout}
+
+\input{template/commands}
+
+\fancypagestyle{plain}
+\fancyhead{}
+\fancyhead[LE]{\DocTitle}
+\fancyhead[RE]{\leftmark}
+\fancyhead[LO]{\leftmark}
+\fancyhead[RO]{\DocTitle}
+\fancyfoot[C]{\sffamily\fontsize{11pt}{11pt}\selectfont\thepage}
+
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.0pt}
+
+\pagestyle{plain}
+
+\SetBgPosition{current page.north west}	% Select location
+\SetBgOpacity{1.0}						% Select opacity
+\SetBgAngle{0.0}						% Select roation of image
+\SetBgScale{1.0}						% Select scale factor of logo
+
+% fancy quote environment
+\let\origquote\quote
+\let\endorigquote\endquote
+\renewenvironment{quote}{
+  \origquote
+  \small
+}{\endorigquote}
+
+% hyperlinks
+\hypersetup{colorlinks=false,linkbordercolor=gray,pdfborderstyle={/S/U/W 1},urlcolor=red}
+
+\begin{document}
+
+	\frontmatter
+		\input{template/firstpage}
+	
+	\setcounter{page}{0}
+	\tableofcontents
+
+	\mainmatter

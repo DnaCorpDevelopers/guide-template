@@ -1,0 +1,23 @@
+\newcommand{\Quote}{text/quote}
+
+\newcommand{\MyGraphicFirstPage}{
+	\begin{tikzpicture}[remember picture,overlay]
+		\node at (current page.north) {\includegraphics[width=\paperwidth]{template/topFirst}};
+		\node at (current page.south) {\includegraphics[width=\paperwidth]{template/bottomFirst}};
+	\end{tikzpicture}
+}
+
+\newcommand{\MyGraphicTemplate}{
+	\begin{tikzpicture}[remember picture,overlay]
+		\checkoddpage
+		\ifoddpage
+			\node at (current page.north) {\includegraphics[width=\paperwidth,height=3.5cm]{template/topOdd}};
+			\node at (current page.south) {\includegraphics[width=\paperwidth,height=3.5cm]{template/bottomOdd}};
+		\else
+			\node at (current page.north) {\includegraphics[width=\paperwidth,height=3.5cm]{template/topEven}};
+			\node at (current page.south) {\includegraphics[width=\paperwidth,height=3.5cm]{template/bottomEven}};
+		\fi
+	\end{tikzpicture}
+}
+
+\newcommand{\HRule}{\textcolor{black}{\rule{\linewidth}{0.5mm}}}

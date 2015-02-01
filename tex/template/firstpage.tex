@@ -1,0 +1,43 @@
+% title page
+\SetBgContents{}
+
+\begin{titlepage}
+%\DocTitle
+	\begin{center}
+		\ThisULCornerWallPaper{1.0}{img/wallpaper}
+	\end{center}
+\end{titlepage} 
+
+\newpage
+
+\SetBgContents{\MyGraphicTemplate}	
+
+~\\[5.5cm]
+
+\begin{minipage}{0.3\textwidth}
+	\begin{flushleft}
+		~
+	\end{flushleft}
+\end{minipage}
+
+% quote page 
+\begin{minipage}{0.7\textwidth}
+	\begin{flushright} \large
+	\IfFileExists{\Quote}
+	{
+		\begin{quote}
+			\input{\Quote}
+		\end{quote}
+	}
+	{
+		~\\
+	}
+	\end{flushright}
+\end{minipage}
+
+~\\[15.0cm]
+
+% date page
+\begin{center}
+	\today
+\end{center}
